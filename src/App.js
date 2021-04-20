@@ -1,11 +1,20 @@
-import React from 'react';
-import Covid from './components/covid';
+// import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' 
+import Home from './pages/Home';
+import Info from './pages/Info';
 
 function App() {
   return (
-    <div className="App">
-      <Covid />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/:pais">
+          <Info/>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
